@@ -1,5 +1,4 @@
-# Project in Angular 2 TypeScript with Bootstrap 4 for B2B project [![Build Status]]
-
+# Project in Angular 2 TypeScript with Bootstrap 4 for B2B project.
 
 ## Getting Started
 It's only working fine with backend.
