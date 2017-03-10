@@ -1,0 +1,30 @@
+<div>
+
+  <section class="user clearfix">
+    <h2>
+      <mpt-gravatar [hash]="user?.avatarHash" [size]="68"
+                    [alt]="user?.name"></mpt-gravatar>
+      {{user?.name}}
+    </h2>
+    <span *ngIf="!shownOnProfile">
+      <a class="profile-link" [routerLink]="['/users/' + user?.id]">view my profile</a>
+    </span>
+    <span class="microposts" *ngIf="!shownOnProfile">
+      {{(user?.userStats?.micropostCnt || 0) | pluralize:'micropost'}}
+    </span>
+  </section>
+
+  <section class="relationships clearfix">
+    <div>
+      <a class="followings" [routerLink]="['/users/' + user?.id, 'followings']">
+        <strong class="stat">{{user?.userStats?.followingCnt || 0}}</strong>
+        followings
+      </a>
+      <a class="followers" [routerLink]="['/users/' + user?.id, 'followers']">
+        <strong class="stat">{{user?.userStats?.followerCnt || 0}}</strong>
+        followers
+      </a>
+    </div>
+  </section>
+
+</div>
