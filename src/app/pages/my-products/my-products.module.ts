@@ -1,28 +1,34 @@
-import {MyProductsComponent} from "./my-products.component";
+import { MyProductsComponent } from "./my-products.component";
+import { Routes, RouterModule } from "@angular/router";
+import { MyProductsRoutingModule } from "./my-products-routing.module";
+
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { BrowserModule } from '@angular/platform-browser';
 import {NgModule} from "@angular/core/src/metadata/ng_module";
-import {Routes, RouterModule} from "@angular/router";
-import {MyProductsRoutingModule} from "./my-products-routing.module";
-import {BoughtComponent} from "./bought.component";
-import {SoldComponent} from "./sold.component";
-import {MyComponent} from "./my.component";
-import {AddComponent} from "./add.component";
-import { FormsModule }   from '@angular/forms';
+import {CommonModule} from "@angular/common";
+
+import {UserProductListComponent} from './../../components'
+import {UserAddProductComponent} from './../../components'
+import {UserBoughtListComponent} from './../../components'
+import {UserSoldListComponent} from './../../components'
 
 
 
 @NgModule({
   imports: [
-  MyProductsRoutingModule,
-  FormsModule,
-
+    MyProductsRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserModule,
 
   ],
   declarations: [
-    MyComponent,
-   MyProductsComponent,
-   BoughtComponent,
-   SoldComponent,
-   AddComponent,
+    
+    MyProductsComponent,
+    UserProductListComponent,
+    UserAddProductComponent,
+    UserBoughtListComponent,
+    UserSoldListComponent
   ],
   exports: [
     MyProductsComponent,

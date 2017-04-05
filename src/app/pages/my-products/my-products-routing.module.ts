@@ -2,10 +2,14 @@ import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {PrivatePageGuard} from "./../../core/services/private-page.guard";
 import {MyProductsComponent} from "./my-products.component";
-import {BoughtComponent} from "./bought.component";
-import {SoldComponent} from "./sold.component";
-import {MyComponent} from "./my.component";
-import {AddComponent} from "./add.component";
+
+
+import {UserProductListComponent} from "./../../components";
+import {UserAddProductComponent} from "./../../components";
+import {UserBoughtListComponent} from "./../../components";
+import {UserSoldListComponent} from "./../../components";
+
+
 
 const myProductsRoutes: Routes = [
   {
@@ -17,11 +21,11 @@ const myProductsRoutes: Routes = [
         path: '',
        // canActivateChild: [PrivatePageGuard],
         children: [
-         { path: 'add', component: AddComponent },
+         { path: 'add', component: UserAddProductComponent },
         // { path: 'my', component: MyComponent },
-           { path: 'bought', component: BoughtComponent },
-          { path: 'sold', component: SoldComponent },
-          { path: '', component: MyComponent }
+           { path: 'bought', component: UserBoughtListComponent },
+          { path: 'sold', component: UserSoldListComponent },
+          { path: '', component: UserProductListComponent }
         ]
       }
     ]

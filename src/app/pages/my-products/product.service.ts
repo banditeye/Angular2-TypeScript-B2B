@@ -1,9 +1,9 @@
 import {Observable} from "rxjs/Observable";
 import {Injectable} from "@angular/core";
 import {Response} from "@angular/http";
-import {JsonHttp} from "./";
-import {PageRequest, Page, ProductParams} from "../dto";
-import {User, Product} from "../domains";
+import {JsonHttp} from "./../../core/services";
+import {PageRequest, Page, ProductParams} from "../../core/dto";
+import {User, Product} from "./../../core/domains";
 import {objToSearchParams} from "./helpers";
 
 const url = '/api/product';

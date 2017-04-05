@@ -1,0 +1,45 @@
+
+<p>Adding new product</p>
+
+<form [formGroup]="myForm" *ngIf="active" (ngSubmit)="onSubmit(myForm.value)">
+
+    <div class="form-group">
+        <label for="nameInput">Name</label>
+        <input type="text" class="form-control" id="nameInput" required formControlName="name" placeholder="Name of product" />
+        <div [hidden]="myForm.controls.name.valid || (myForm.controls.name.pristine && !submitted)">
+            Name is required (minimum 4 characters).
+        </div>
+
+
+
+    </div>
+
+
+    <div class="form-group">
+        <label for="priceInput">Price</label>
+        <input type="text" class="form-control" id="priceInput" required formControlName="price" placeholder="Set price of product"
+        />
+    </div>
+
+    <div class="form-group">
+        <label for="descriptionInput">Description</label>
+        <textarea class="form-control" id="descriptionInput" required formControlName="description" rows="3" placeholder="Describe yours product"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="piecesInput">Pieces</label>
+        <input type="text" class="form-control" id="piecesInput" required formControlName="pieces" placeholder="Set count of pieces"
+        />
+    </div>
+    <div class="form-group">
+        <label for="barcodeInput">Barcode</label>
+        <input type="text" class="form-control" id="barcode" required formControlName="barcode" placeholder="Scan Barcode" />
+    </div>
+    <div class="form-group">
+        <label for="categoryInput">Category</label>
+        <input type="text" class="form-control" id="categoryInput" required formControlName="idSubcategory" placeholder="Set Category"
+        />
+    </div>
+    <button type="submit" class="btn btn-success">Add</button>
+    <button type="reset" class="btn btn-success">Clear</button>
+
+</form>
