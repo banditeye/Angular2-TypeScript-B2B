@@ -2,18 +2,31 @@ import {BuyComponent} from "./buy.component";
 import {NgModule} from "@angular/core/src/metadata/ng_module";
 import {Routes, RouterModule} from "@angular/router";
 import {CategoryModule} from "./category/category.module";
+import {ProductListComponent} from './../../components';
+import {CategoryComponent} from './../../components';
+import {BasketComponent} from './../../components';
+import {CategoryService} from './../../core/services/category.service'
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { BrowserModule } from '@angular/platform-browser';
+import {BuyRoutingModule} from './buy-routing.module';
+import {ProductListService} from "./../../components/product-list/product-list.service";
+import {BasketService} from "./../../components/basket/basket.service";
 
-const routes: Routes = [
-  {path: 'buy', component: BuyComponent},
-];
 
 @NgModule({
   imports: [
-    RouterModule.forChild(routes),
-    CategoryModule
+   ReactiveFormsModule, FormsModule,BrowserModule, BuyRoutingModule
+
   ],
+  providers: [
+    CategoryService,ProductListService, BasketService
+    
+  ],  
   declarations: [
    BuyComponent,
+   ProductListComponent,
+   BasketComponent,
+   CategoryComponent,
   ],
   exports: [
     BuyComponent,

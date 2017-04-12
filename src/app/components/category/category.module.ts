@@ -1,19 +1,23 @@
 import {CommonModule} from "@angular/common";
 import {NgModule} from "@angular/core/src/metadata/ng_module";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import {RouterModule} from "@angular/router";
-import {SharedModule} from "../../../shared";
+import {SharedModule} from "../../shared";
 import {CategoryComponent} from "./category.component";
-import {ProductService} from "../../../core/services/product.service";
-
+import {CategoryService} from "./category.service";
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserModule
   ],
   providers: [
-    ProductService,
+    CategoryService,
   ],
 
   declarations: [

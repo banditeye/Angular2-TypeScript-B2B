@@ -6,6 +6,7 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { BrowserModule } from '@angular/platform-browser';
 import {NgModule} from "@angular/core/src/metadata/ng_module";
 import {CommonModule} from "@angular/common";
+import {ProductService} from "./../../core/services/product.service";
 
 import {UserProductListComponent} from './../../components'
 import {UserAddProductComponent} from './../../components'
@@ -21,6 +22,9 @@ import {UserSoldListComponent} from './../../components'
     ReactiveFormsModule,
     BrowserModule,
 
+  ],
+  providers:[
+   ProductService 
   ],
   declarations: [
     

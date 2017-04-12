@@ -1,2 +1,21 @@
-<H1> All products here : </H1>
-<mpt-category></mpt-category>
+<div class="row" >
+   
+    <div class="col col-md-2">
+        
+        <ul class="nav flex-column" >
+             <li class="nav-item" #link *ngFor="let cat of category" (click)="onClick(cat.id)">
+                <a class="nav-link active" routerLink="./{{cat.name}}" routerLinkActive="active">{{cat.name}}</a>
+            </li>
+        </ul>
+
+
+    </div>
+    <!-- Columns start at 10/12% wide on mobile and bump up to 10/12% wide on desktop -->
+    <div class="col-10 col-md-10"  >
+       <router-outlet > </router-outlet>
+       <mpt-basket></mpt-basket>
+       <div *ngIf="clickedCategory"><h2>Lista Produktów</h2></div>
+      <mpt-product-list *ngIf="clickedCategory" [category]="clickedCategory"></mpt-product-list> 
+    </div>
+
+</div>

@@ -8,6 +8,7 @@ import {objToSearchParams} from "./helpers";
 
 const url = '/api/product';
 const url2 = (userId: string): string => `/api/users/${userId}/products`;
+const url3= 'api/users/me/products';
 const defaultPageRequest: PageRequest = {page: 1, size: 5};
 
 @Injectable()
@@ -35,6 +36,11 @@ export class ProductService{
 
     getUserProduct(id: string): Observable<any> {
     return this.http.get(url2(id))
+    .map(res => res.json());
+  }
+
+     getMyProduct(): Observable<any> {
+    return this.http.get(url3)
     .map(res => res.json());
   }
 

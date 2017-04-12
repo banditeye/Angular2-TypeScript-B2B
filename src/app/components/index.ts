@@ -21,3 +21,12 @@ export * from './user-add-product/user-add-product.component';
 
 export * from './user-sold-list/user-sold-list.module';
 export * from './user-sold-list/user-sold-list.component';
+
+export * from './product-list/product-list.module';
+export * from './product-list/product-list.component';
+
+export * from './category/category.module';
+export * from './category/category.component';
+
+export * from './basket/basket.module';
+export * from './basket/basket.component';

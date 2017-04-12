@@ -1,9 +1,10 @@
 import {CommonModule} from "@angular/common";
 import {NgModule} from "@angular/core/src/metadata/ng_module";
 import {RouterModule} from "@angular/router";
-import {SharedModule} from "../../../shared";
-import {CategoryComponent} from "./category.component";
-import {ProductService} from "../../../core/services/product.service";
+import {SharedModule} from "../../shared";
+import {BasketComponent} from "./basket.component";
+import {BasketService} from "./basket.service";
+
 
 
 @NgModule({
@@ -13,15 +14,15 @@ import {ProductService} from "../../../core/services/product.service";
     SharedModule,
   ],
   providers: [
-    ProductService,
+  BasketService
   ],
 
   declarations: [
-    CategoryComponent,
+   BasketComponent,
   ],
   exports: [
-    CategoryComponent,
+    BasketComponent,
   ]
 })
-export class CategoryModule {
+export class BasketModule {
 }

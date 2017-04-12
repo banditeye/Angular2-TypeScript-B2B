@@ -1,9 +1,22 @@
-<H2>Category Here: </H2>
 
-<ul class="users list-unstyled">
-  <li *ngFor="let u of products" class="clearfix">
-    <a>{{u.name}}</a>
-     <a>{{u.description}}</a>
-      <a>{{u.price}}</a>
-  </li>
-</ul>
+
+
+<div class="row" *ngFor="let cat of category">
+   
+    <div class="col col-md-2">
+        
+        <ul class="nav flex-column"  >
+             <li class="nav-item">
+                <a class="nav-link active"routerLink="./" routerLinkActive="active">{{cat.name}}</a>
+            </li>
+        </ul>
+
+
+    </div>
+    <!-- Columns start at 10/12% wide on mobile and bump up to 10/12% wide on desktop -->
+    <div class="col-10 col-md-10">
+        <router-outlet></router-outlet>
+    </div>
+
+</div>
+

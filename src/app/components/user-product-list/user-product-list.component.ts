@@ -21,7 +21,7 @@ export class UserProductListComponent implements OnInit {
 
   ngOnInit() {
     
-     this.productService.getUserProduct('2')
+     this.productService.getMyProduct()
      .subscribe(data=> this.myProduct=data );
   }
 

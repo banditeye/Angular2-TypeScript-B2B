@@ -4,6 +4,7 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import {SharedModule} from "../../shared";
 import { UserProductListComponent} from "./user-product-list.component";
 import { UserProductListService} from "./user-product-list.service";
+import { ProductService} from "./../../core/services/product.service";
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { UserProductListService} from "./user-product-list.service";
   ],
   providers: [
     UserProductListService,
+    ProductService
   ],
   exports: [
    UserProductListComponent,

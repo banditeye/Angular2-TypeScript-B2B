@@ -1,0 +1,31 @@
+<div *ngIf="!basket">
+    Twój koszyk jest pusty.</div>
+<div *ngIf="basket">Twój koszyk zawiera:</div>
+
+<ul class="list-group">
+    <li class="list-group-item justify-content-between">
+        <span>  Nazwa Produktu</span>
+        <span>Sztuk</span>
+        
+    </li>
+</ul>
+<ul class="list-group">
+    <li class="list-group-item justify-content-between" *ngFor="let u of basket">
+        {{u.product.name}}
+        <span class="badge badge-default badge-pill">{{u.pieces}}</span>
+
+    </li>
+</ul>
+<ul class="list-group">
+    <li class="list-group-item justify-content-between">
+        <span>Podsumowanie zakupów</span>
+        <span>Łączny koszt:</span>
+         <span>Łącznie Sztuk: </span>
+    </li>
+</ul>
+<ul class="list-group">
+    <li class="list-group-item justify-content-between">
+        <button type="button" class="btn btn-danger">Usuń zawartość koszyka</button>
+        <button type="button" class="btn btn-success">Zatwierdź zakupy</button>
+    </li>
+</ul>

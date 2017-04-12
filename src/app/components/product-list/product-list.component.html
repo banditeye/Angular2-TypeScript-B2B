@@ -1,0 +1,17 @@
+
+<div class="list-group" *ngFor="let product of products">
+  <a class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <div class="p-2">
+        <h5 class="mb-1">{{product.name}}</h5>
+        <p class="mb-1">{{product.description}}</p> <small class="text-muted">Barcode: {{product.barcode}}</small>
+      </div>
+      <div class="p-2">
+        <small class="text-muted">Cena: {{product.price}} PLN</small>
+        <input type="text" name="setPieces" id="setPieces" #pieces> 
+       <button type="button" (click)="addToBasket(product.id,pieces.value)" class="btn btn-success">Dodaj do koszyka!</button>
+      </div>
+    </div>
+
+  </a>
+</div>
