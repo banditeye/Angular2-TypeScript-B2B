@@ -1,6 +1,6 @@
 import {CommonModule} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {NgModule} from "@angular/core/src/metadata/ng_module";
+import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
 import {UserEditComponent} from "./user-edit.component";
 

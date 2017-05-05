@@ -16,16 +16,25 @@ export class BasketComponent implements OnInit {
 
 
   constructor(private errorHandler: HttpErrorHandler, private basketService: BasketService) {
-
-
   }
-
 
 
   ngOnInit(): any {
     this.basketService.getProductByCategory()
     .subscribe(u =>this.basket=u );
 
+  }
+
+  deleteBasket(){
+     if (!window.confirm('Jesteś pewien?')) return;
+    this.basketService.deleteAllBasket()
+    .subscribe(()=>{});
+  
+  }
+
+  confirmTransaction(){
+    this.basketService.confirmTransaction()
+    .subscribe(()=>{});
   }
 
 

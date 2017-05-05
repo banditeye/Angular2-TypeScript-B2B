@@ -1,5 +1,5 @@
 import {BuyComponent} from "./buy.component";
-import {NgModule} from "@angular/core/src/metadata/ng_module";
+import {NgModule} from "@angular/core";
 import {Routes, RouterModule} from "@angular/router";
 import {CategoryModule} from "./category/category.module";
 import {ProductListComponent} from './../../components';

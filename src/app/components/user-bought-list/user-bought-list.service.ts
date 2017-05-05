@@ -12,5 +12,9 @@ export class UserBoughtListService {
   constructor(private http: JsonHttp) {
   }
 
-  
+   getBoughtProduct(): Observable<Micropost[]> {
+    return this.http.get('api/transaction/bought')
+      .map(res => res.json())
+      ;
+  }
 }

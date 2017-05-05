@@ -16,5 +16,14 @@ export class BasketService {
     .map(res => res.json());
   }
 
+  deleteAllBasket(): Observable<Response>{
+  return  this.http.delete('/api/basket');
+  
+  }
+
+  confirmTransaction():Observable<Response>{
+    return this.http.post('api/transaction',null);
+  }
+
 
 }

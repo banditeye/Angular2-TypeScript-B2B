@@ -1,10 +1,10 @@
-<h1>Sign up</h1>
+<h1>Zarejestruj się</h1>
 
 <form [formGroup]="myForm" (submit)="onSubmit(myForm.value)" novalidate>
 
   <div class="form-group"
        [class.has-danger]="!name.valid && name.touched">
-    <label class="col-form-label" for="nameInput">Name</label>
+    <label class="col-form-label" for="nameInput">Imię</label>
     <input
       type="text"
       class="form-control form-control-danger"
@@ -40,7 +40,7 @@
 
   <div class="form-group"
        [class.has-danger]="!password.valid && password.touched">
-    <label class="col-form-label" for="passwordInput">Password</label>
+    <label class="col-form-label" for="passwordInput">Hasło</label>
     <input
       type="password"
       class="form-control form-control-danger"
@@ -58,8 +58,7 @@
 
   <div class="form-group"
        [class.has-danger]="!passwordConfirmation.valid && passwordConfirmation.touched">
-    <label class="col-form-label" for="passwordConfirmationInput">Confirm
-      Password</label>
+    <label class="col-form-label" for="passwordConfirmationInput">Potwierdź hasło</label>
     <input
       type="password"
       class="form-control form-control-danger"
@@ -76,7 +75,7 @@
     </div>
   </div>
 
-  <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+  <button type="submit" class="btn btn-lg btn-primary">Zarejestruj</button>
 
 </form>
 

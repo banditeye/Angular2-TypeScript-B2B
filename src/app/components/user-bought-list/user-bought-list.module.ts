@@ -1,5 +1,5 @@
 import {CommonModule} from "@angular/common";
-import {NgModule} from "@angular/core/src/metadata/ng_module";
+import {NgModule} from "@angular/core";
 import {SharedModule} from "../../shared";
 import { UserBoughtListComponent} from "./user-bought-list.component";
 import { UserBoughtListService} from "./user-bought-list.service";

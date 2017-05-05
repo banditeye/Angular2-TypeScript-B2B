@@ -9,7 +9,7 @@ import {HttpErrorHandler} from "../../core/services/http-error-handler";
   providers: [UserBoughtListService],
 })
 export class UserBoughtListComponent implements OnInit {
-
+listTransaction:any;
 
   constructor(private userMicropostService: UserBoughtListService,
          
@@ -17,8 +17,11 @@ export class UserBoughtListComponent implements OnInit {
   }
 
   ngOnInit(): any {
- 
+    this.list();
   }
 
-  
+  list(){
+    this.userMicropostService.getBoughtProduct()
+    .subscribe(data=>this.listTransaction=data);
+  }
 }

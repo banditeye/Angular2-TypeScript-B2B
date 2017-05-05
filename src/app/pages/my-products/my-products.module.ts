@@ -4,7 +4,7 @@ import { MyProductsRoutingModule } from "./my-products-routing.module";
 
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { BrowserModule } from '@angular/platform-browser';
-import {NgModule} from "@angular/core/src/metadata/ng_module";
+import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
 import {ProductService} from "./../../core/services/product.service";
 

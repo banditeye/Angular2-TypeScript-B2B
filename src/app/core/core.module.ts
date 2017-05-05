@@ -1,5 +1,5 @@
 import {CommonModule} from "@angular/common";
-import {NgModule} from "@angular/core/src/metadata/ng_module";
+import {NgModule} from "@angular/core";
 import {SkipSelf, Optional} from "@angular/core";
 import {HttpErrorHandler} from "./services/http-error-handler";
 import {AuthService} from "./services/auth.service";

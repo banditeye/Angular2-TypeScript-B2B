@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const helpers = require('./helpers');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
+const {CheckerPlugin} = require('awesome-typescript-loader');
 
 module.exports = {
   entry: {
@@ -37,7 +37,7 @@ module.exports = {
       template: 'src/index.html',
       chunksSortMode: 'dependency',
     }),
-    new ForkCheckerPlugin(),
+    new CheckerPlugin(),
     new webpack.ContextReplacementPlugin(
       /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
       __dirname

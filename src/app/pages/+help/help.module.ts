@@ -1,5 +1,5 @@
 import {HelpComponent} from "./help.component";
-import {NgModule} from "@angular/core/src/metadata/ng_module";
+import {NgModule} from "@angular/core";
 import {Routes, RouterModule} from "@angular/router";
 
 const routes: Routes = [

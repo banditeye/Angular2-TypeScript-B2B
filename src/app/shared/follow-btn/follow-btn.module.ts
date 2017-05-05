@@ -1,8 +1,7 @@
 import {CommonModule} from "@angular/common";
-import {NgModule} from "@angular/core/src/metadata/ng_module";
+import {NgModule} from "@angular/core";
 import {FollowBtnComponent} from "./follow-btn.component";
 import {FollowBtnService} from "./follow-btn.service";
-
 @NgModule({
   imports: [CommonModule],
   declarations: [
