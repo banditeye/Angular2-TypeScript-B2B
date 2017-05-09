@@ -16,4 +16,14 @@ export class CategoryService {
     return this.http.get(url)
     .map(res => res.json());
   }
+
+   getSubcategoryById(id:any): Observable<any> {
+    return this.http.get(`api/subcategory/${id}`)
+    .map(res => res.json());
+  }
+
+  getSubcategoryByName(name:any): Observable<any> {
+    return this.http.get(`api/subcategory/name/${name}`)
+    .map(res => res.json());
+  }
 }

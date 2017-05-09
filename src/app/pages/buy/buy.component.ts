@@ -16,7 +16,7 @@ export class BuyComponent implements OnInit {
 
     category: any;
     clickedCategory:any;
- 
+    subcategory:any;
 
      clicked=false;
 
@@ -37,6 +37,11 @@ export class BuyComponent implements OnInit {
         this.clickedCategory=link;
               console.log(this.clickedCategory);
 
+    }
+    getSubCategory(id:any)
+    {
+         this.categoryService.getSubcategoryById(id)
+            .subscribe(data => this.subcategory = data);
     }
 
 }

@@ -9,6 +9,7 @@ import { ProductService } from "../../core/services/product.service";
 import { Product } from "../../core/domains";
 import { ProductParams } from "../../core/dto";
 import { FormGroup, FormBuilder, FormControl, Validators } from "@angular/forms";
+import { CategoryService } from "./../../core/services/category.service";
 
 @Component({
   selector: 'mpt-user-add-product',
@@ -17,16 +18,21 @@ import { FormGroup, FormBuilder, FormControl, Validators } from "@angular/forms"
   providers: [UserAddProductService],
 })
 export class UserAddProductComponent implements OnInit {
+  category: any;
+  subcategory:any;
+  selectedCategory:any;
 
 submitted= false;
   myForm: FormGroup;
   active = true;
 
-  constructor(private productService: ProductService,
+  constructor(private productService: ProductService,private categoryService: CategoryService,
     private errorHandler: HttpErrorHandler, private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.initForm();
+    this.getCategory();
+    this.setSubcategory(2);
   }
   onSubmit(params): void {
     this.submitted=true;
@@ -35,6 +41,19 @@ submitted= false;
       .subscribe(() => {
         toastr.success('saadsasd');
       }, this.handleError);
+  }
+
+  getCategory(){
+    this.categoryService.getUserProduct()
+    .subscribe(data=>this.category=data);
+  }
+
+  setSubcategory(name:any)
+  {
+    console.log("kliknieto kategorie: "+name)
+
+    this.categoryService.getSubcategoryById(name)
+    .subscribe(data=>this.subcategory=data);
   }
 
   private handleError(error) { }
