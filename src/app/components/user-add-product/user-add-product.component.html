@@ -36,8 +36,8 @@
     </div>
     <div class="form-group">
         <label for="categoryInput">Podkategoria</label>
-        <select class="form-control" id="categoryInput" required formControlName="idSubcategory">
-      <option *ngFor="let subcategory of subcategory">{{subcategory.name}}</option>
+        <select class="form-control" #b id="categoryInput" required formControlName="idSubcategory">
+      <option *ngFor="let subcategory of subcategory" [value]="subcategory.id">{{subcategory.name}}</option>
         </select>
     </div>
     <button type="submit" class="btn btn-success">Dodaj</button>

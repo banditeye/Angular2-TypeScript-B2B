@@ -32,7 +32,7 @@ export class FeedComponent implements OnInit {
   }
 
   delete(id: number) {
-    if (!window.confirm('Are you sure?')) return;
+    if (!window.confirm('Jesteś pewien?')) return;
     this.micropostService.delete(id)
       .subscribe(() => {
         this.list();

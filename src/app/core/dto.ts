@@ -25,3 +25,12 @@ export interface ProductParams{
    idSubcategory: number;
 }
 
+export interface Basket{
+  id:number;pieces:number;
+  user:{id:number;name:string;email:string};
+  product:{id:number;name:string;price:number;description:string;pieces:number;barcode:number;sold:number;
+  user:{id:number;name:string;email:string};
+  subcategory:{id:number;name:string;
+  category:{id:number;name:string}}}
+}
+

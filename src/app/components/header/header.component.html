@@ -1,50 +1,43 @@
 <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
-<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" [routerLink]="['/']">B2B</a>
+    <a class="navbar-brand" [routerLink]="['/']">B2B</a>
 
-  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item home" routerLinkActive="active" *ngIf="isSignedIn">
-        <a class="nav-link" [routerLink]="['/home']">Home</a>
-      </li>
-       <li class="nav-item home" routerLinkActive="active" *ngIf="isSignedIn">
-        <a class="nav-link" [routerLink]="['/buy']">Kup</a>
-      </li>
-       <li class="nav-item home" routerLinkActive="active" *ngIf="isSignedIn">
-        <a class="nav-link" [routerLink]="['/myproducts']">Moje produkty</a>
-      </li>
-      <li class="nav-item top" routerLinkActive="active"
-          [routerLinkActiveOptions]="{exact: true}" *ngIf="!isSignedIn">
-        <a class="nav-link" [routerLink]="['/']">Home</a>
-      </li>
-      <li class="nav-item users" routerLinkActive="active"
-          [routerLinkActiveOptions]="{exact: true}" *ngIf="isSignedIn">
-        <a class="nav-link" [routerLink]="['/users']">Użytkownicy</a>
-      </li>
-      <li class="nav-item help" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/help']">Pomoc</a>
-      </li>
-      <li class="nav-item login" routerLinkActive="active" *ngIf="!isSignedIn">
-        <a class="nav-link" [routerLink]="['/login']">Zaloguj</a>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav float-sm-right" *ngIf="isSignedIn">
-      <li class="nav-item profile" routerLinkActive="active"
-          [routerLinkActiveOptions]="{exact: true}">
-        <a class="nav-link" [routerLink]="['/users/me']">Profile</a>
-      </li>
-      <li class="nav-item settings" routerLinkActive="active"
-          [routerLinkActiveOptions]="{exact: true}">
-        <a class="nav-link" [routerLink]="['/users/me/edit']">Ustawienia</a>
-      </li>
-      <li class="nav-item logout">
-        <a class="nav-link" href="#"
-           (click)="logout(); $event.preventDefault()">Wyloguj</a>
-      </li>
-    </ul>
-  </div>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item home" routerLinkActive="active" *ngIf="isSignedIn">
+                <a class="nav-link" [routerLink]="['/home']">Home</a>
+            </li>
+            <li class="nav-item home" routerLinkActive="active" *ngIf="isSignedIn">
+                <a class="nav-link" [routerLink]="['/buy']">Kup</a>
+            </li>
+            <li class="nav-item home" routerLinkActive="active" *ngIf="isSignedIn">
+                <a class="nav-link" [routerLink]="['/myproducts']">Moje produkty</a>
+            </li>
+            <li class="nav-item top" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" *ngIf="!isSignedIn">
+                <a class="nav-link" [routerLink]="['/']">Home</a>
+            </li>
+            <li class="nav-item users" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" *ngIf="isSignedIn">
+                <a class="nav-link" [routerLink]="['/users']">Użytkownicy</a>
+            </li>
+            <li class="nav-item help" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['/help']">Pomoc</a>
+            </li>
+            <li class="nav-item login" routerLinkActive="active" *ngIf="!isSignedIn">
+                <a class="nav-link" [routerLink]="['/login']">Zaloguj</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav float-sm-right" *ngIf="isSignedIn">
+            <li class="nav-item profile" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a class="nav-link" [routerLink]="['/users/me']">Profil</a>
+            </li>
+            <li class="nav-item settings" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a class="nav-link" [routerLink]="['/users/me/edit']">Ustawienia</a>
+            </li>
+            <li class="nav-item logout">
+                <a class="nav-link" href="#" (click)="logout(); $event.preventDefault()">Wyloguj</a>
+            </li>
+        </ul>
+    </div>
 </nav>
-
-

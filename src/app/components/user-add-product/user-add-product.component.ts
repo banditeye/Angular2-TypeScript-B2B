@@ -32,7 +32,7 @@ submitted= false;
   ngOnInit(): void {
     this.initForm();
     this.getCategory();
-    this.setSubcategory(2);
+    this.setSubcategory(1);
   }
   onSubmit(params): void {
     this.submitted=true;

@@ -31,7 +31,7 @@ export class MicropostListComponent implements OnInit {
   }
 
   delete(postId: number) {
-    if (!window.confirm('Are you sure?')) return;
+    if (!window.confirm('Jesteś pewien?')) return;
     this.micropostService.delete(postId)
       .subscribe(() => {
         }, e => this.errorHandler.handle(e),

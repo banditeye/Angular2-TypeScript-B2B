@@ -1,14 +1,14 @@
-<p> My products list</p>
+<p> Moja lista produktów</p>
 
 
 <div class="list-group" *ngFor="let product of myProduct">
 
-  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">{{product.name}}</h5>
-      <small class="text-muted">{{product.price}} PLN</small>
-    </div>
-    <p class="mb-1">{{product.description}}</p>
-    <small class="text-muted">Barcode: {{product.barcode}}</small>
-  </a>
+    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{product.name}}</h5>
+            <small class="text-muted">{{product.price}} PLN</small>
+        </div>
+        <p class="mb-1">{{product.description}}</p>
+        <small class="text-muted">Barcode: {{product.barcode}}</small>
+    </a>
 </div>
