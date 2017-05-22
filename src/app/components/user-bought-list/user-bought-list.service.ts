@@ -17,4 +17,12 @@ export class UserBoughtListService {
       .map(res => res.json())
       ;
   }
+
+   getBoughtProductbyTransaction(id:any): Observable<any> {
+    return this.http.get(`api/transaction/products/${id}`)
+      .map(res => res.json())
+      ;
+  }
+
+ 
 }

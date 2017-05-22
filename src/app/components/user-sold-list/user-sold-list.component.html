@@ -1,2 +1,13 @@
 <p>
-    Lista moich sprzedanych produktów</p>
+    Sprzedane produkty</p>
+
+
+
+
+<ul class="list-group" *ngFor="let product of products">
+    <li class="list-group-item justify-content-between">
+        {{product.product.name}} {{product.pieces}}{{product.transaction.buyer.name}} {{product.transaction.state}}
+        <span class="badge badge-default badge-pill"></span>
+    </li>
+
+</ul>

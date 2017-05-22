@@ -1,12 +1,25 @@
+<p>
+    Kupione produkty</p>
 
-<p>Kupione produkty</p>
-
-<div class="list-group" *ngFor="let transaction of listTransaction">
-
-  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Transakcja numer: {{transaction.id}}</h5>
-       <h6 class="mb-1">Stan: {{transaction.state}}</h6>
+<div class="list-group" *ngFor="let transaction of listTransaction; let i=index" (click)="onSelect(transaction);setIndex(i); ">
+    <a class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-end">
+            <span class="mr-auto p-2">
+                <h5 class="mb-2">Transakcja numer: {{transaction.id}}</h5>
+            </span>
+            <span class=" p-2"> <h5 class="mb-1">Stan: {{transaction.state}}</h5>    </span>
+            <button class="btn btn-success" style="margin-right:5px;" (click)="pay(hero); $event.stopPropagation()">Płać</button>
+            <button class="btn btn-danger" (click)="delete(hero); $event.stopPropagation()">X</button>
         </div>
     </a>
+    <div *ngIf="i==index">
+        <ul class="list-group" *ngFor="let product of products; let i index">
+            <li class="list-group-item justify-content-end">
+                <span class="mr-auto"> {{product.product.name}}</span>
+                <span class="badge badge-default badge-pill">{{product.product.user.name}}</span>
+                <span class="badge badge-default badge-pill"> Ilość: {{product.pieces}}</span>
+                <span class="badge badge-default badge-pill"> {{product.product.price}} PLN</span>
+            </li>
+        </ul>
+    </div>
 </div>
