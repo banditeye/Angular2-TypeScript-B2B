@@ -14,6 +14,8 @@ clickedTransaction:any;
 products:any;
 index:number;
 
+
+
   constructor(private userMicropostService: UserBoughtListService,
          
               private errorHandler: HttpErrorHandler) {
@@ -44,6 +46,8 @@ index:number;
   {
     this.index=i;
   }
+
+
 
  
 }

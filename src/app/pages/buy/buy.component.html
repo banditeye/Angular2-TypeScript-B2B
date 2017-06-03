@@ -16,6 +16,7 @@
         <router-outlet> </router-outlet>
         <mpt-basket></mpt-basket>
         <div *ngIf="clickedCategory " style="margin-top: 15px">
+            <hr class="line">
             <h2 ALIGN=CENTER>Lista Produktów</h2>
         </div>
         <mpt-product-list *ngIf="clickedCategory" [category]="clickedCategory "></mpt-product-list>
