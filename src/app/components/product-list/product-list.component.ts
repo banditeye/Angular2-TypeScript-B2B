@@ -7,7 +7,7 @@ import * as toastr from "toastr";
 
 @Component({
   selector: 'mpt-product-list',
-  styleUrls: ['product-list.component.css'],
+ // styleUrls: ['product-list.component.css'],
   templateUrl: 'product-list.component.html',
   providers: [],
 })
