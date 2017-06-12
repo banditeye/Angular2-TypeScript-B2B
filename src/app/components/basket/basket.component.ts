@@ -7,7 +7,7 @@ import {Basket} from '../../core/dto';
 
 @Component({
   selector: 'mpt-basket',
-  styleUrls: ['basket.component.css'],
+ // styleUrls: ['basket.component.css'],
   templateUrl: 'basket.component.html',
   providers: [],
 })
