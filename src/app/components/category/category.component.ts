@@ -7,7 +7,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 @Component({
     selector: 'mpt-category',
     templateUrl: './category.component.html',
-    styleUrls:['./category.component.css'],
+   // styleUrls:['./category.component.css'],
 })
 export class CategoryComponent implements OnInit{
 
