@@ -1,7 +1,7 @@
 {
   "name": "angular2-tutorial",
   "version": "0.1.0",
-  "description": "Angular2 tutorial sample application",
+  "description": "Angular4  sample application",
   "main": "",
   "scripts": {
     "clean": "yarn cache clean && rimraf -- node_modules doc coverage dist aot src/**/*.css",
@@ -28,16 +28,7 @@
     "sass": "node-sass src -o src --include-path node_modules --output-style compressed -q",
     "sass:watch": "node-sass src -o src && node-sass -w src -o src"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/springboot-angular2-tutorial/angular2-app.git"
-  },
-  "author": "akirasosa <akirasosa@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/springboot-angular2-tutorial/angular2-app/issues"
-  },
-  "homepage": "https://github.com/springboot-angular2-tutorial/angular2-app",
+   "license": "MIT",
   "dependencies": {
     "@angular/common": "~4.0.0",
     "@angular/compiler": "~4.0.0",
