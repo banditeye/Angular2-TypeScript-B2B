@@ -31,6 +31,5 @@ open http://localhost:4200
 
 [MIT](/LICENSE)
 
-## Thanks to
-Akira Sosa
+
 
