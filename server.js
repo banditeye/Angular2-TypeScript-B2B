@@ -9,7 +9,7 @@ app.use(express.static('dist'));
 // proxy api request
 app.all("/api/*", (req, res) => {
   apiProxy.web(req, res, {
-    target: 'http://localhost:8080'
+    target: 'http://92.222.84.152:8080/b2b-0.1.0/'
   });
 });
 
