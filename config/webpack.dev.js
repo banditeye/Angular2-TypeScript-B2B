@@ -38,7 +38,7 @@ module.exports = webpackMerge(commonConfig, {
         },
         proxy: {
             '/api': {
-                target: 'http://localhost:8080',
+                target: 'http://92.222.84.152:8080/b2b-0.1.0/',
             }
         },
     },
