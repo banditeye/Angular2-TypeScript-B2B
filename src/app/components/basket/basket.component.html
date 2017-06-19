@@ -1,33 +1,36 @@
-<div *ngIf="!checker">
-    Twój koszyk jest pusty.</div>
-<div *ngIf="checker">Twój koszyk zawiera:</div>
-<div *ngIf="checker">
-    <ul class="list-group">
-        <li class="list-group-item justify-content-end">
-            <span class="mr-auto p-2">Nazwa Produktu</span>
-            <span class="p-2" style="margin-right:10px">Cena </span>
-            <span class="p-2">Sztuk</span>
+<button type="button" (click)="show()" class="btn btn-secondary">{{state}} koszyk</button>
+<div *ngIf="show1">
+    <div *ngIf="!checker">
+        Twój koszyk jest pusty.</div>
+    <div *ngIf="checker">Twój koszyk zawiera:</div>
+    <div *ngIf="checker">
+        <ul class="list-group">
+            <li class="list-group-item justify-content-end">
+                <span class="mr-auto p-2">Nazwa Produktu</span>
+                <span class="p-2" style="margin-right:10px">Cena </span>
+                <span class="p-2">Sztuk</span>
 
-        </li>
-    </ul>
-    <ul class="list-group">
-        <li class="list-group-item justify-content-end" *ngFor="let u of basket">
-            <span class="mr-auto p-2">{{u.product.name}}</span>
-            <span class="p-2" style="margin-right:10px">{{u.product.price}} PLN </span>
-            <span class="badge badge-default badge-pill">{{u.pieces}}</span>
-        </li>
-    </ul>
-    <ul class="list-group">
-        <li class="list-group-item justify-content-between">
-            <span style="text-decoration: underline;">Podsumowanie zakupów</span>
-            <span style="text-decoration: underline;">Łączny koszt: {{price}} PLN</span>
-            <span style="text-decoration: underline;">Łącznie Sztuk: {{items}} </span>
-        </li>
-    </ul>
-    <ul class="list-group">
-        <li class="list-group-item justify-content-between">
-            <button type="button" (click)="deleteBasket()" class="btn btn-danger">Usuń zawartość koszyka</button>
-            <button type="button" (click)="confirmTransaction()" class="btn btn-success">Zatwierdź zakupy</button>
-        </li>
-    </ul>
-    <div>
+            </li>
+        </ul>
+        <ul class="list-group">
+            <li class="list-group-item justify-content-end" *ngFor="let u of basket">
+                <span class="mr-auto p-2">{{u.product.name}}</span>
+                <span class="p-2" style="margin-right:10px">{{u.product.price}} PLN </span>
+                <span class="badge badge-default badge-pill">{{u.pieces}}</span>
+            </li>
+        </ul>
+        <ul class="list-group">
+            <li class="list-group-item justify-content-between">
+                <span style="text-decoration: underline;">Podsumowanie zakupów</span>
+                <span style="text-decoration: underline;">Łączny koszt: {{price}} PLN</span>
+                <span style="text-decoration: underline;">Łącznie Sztuk: {{items}} </span>
+            </li>
+        </ul>
+        <ul class="list-group">
+            <li class="list-group-item justify-content-between">
+                <button type="button" (click)="deleteBasket()" class="btn btn-danger">Usuń zawartość koszyka</button>
+                <button type="button" (click)="confirmTransaction()" class="btn btn-success">Zatwierdź zakupy</button>
+            </li>
+        </ul>
+        <div>
+            <div>
