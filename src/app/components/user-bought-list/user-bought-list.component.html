@@ -8,8 +8,8 @@
                 <h5 class="mb-2">Transakcja numer: {{transaction.id}}</h5>
             </span>
             <span class=" p-2"> <h5 class="mb-1">Stan: {{transaction.state}}</h5>    </span>
-            <button *ngIf="transaction.state=='rozpoczeta'" class="btn btn-success" style="margin-right:5px;" (click)="pay(hero); $event.stopPropagation()">Płać</button>
-            <button class="btn btn-danger" (click)="delete(hero); $event.stopPropagation()">X</button>
+            <button *ngIf="transaction.state=='rozpoczeta'" class="btn btn-success" style="margin-right:5px;" (click)="pay(transaction.id); $event.stopPropagation()">Płać</button>
+            <button class="btn btn-danger" (click)="delete(transaction.id); $event.stopPropagation()">X</button>
         </div>
     </a>
     <div *ngIf="i==index">

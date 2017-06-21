@@ -9,7 +9,7 @@ import {HttpErrorHandler} from "../../core/services/http-error-handler";
   providers: [UserBoughtListService],
 })
 export class UserBoughtListComponent implements OnInit {
-listTransaction:any;
+listTransaction:any=[];
 clickedTransaction:any;
 products:any;
 index:number;
@@ -47,7 +47,29 @@ index:number;
     this.index=i;
   }
 
+  delete1:any;
+  delete(h:any)
+  {
+     if (!window.confirm('Na pewno chcesz usunąć transakcję?')) return;
+    this.userMicropostService.delete(h)
+    .subscribe(()=>{} ,
+    () => this.listTransaction = this.listTransaction.filter(p => p.id !== h));
+    this.list();
+    this.list();
+  }
 
 
+  
+
+pay1:any;
+  pay(h:any){
+    if (!window.confirm('Płatność zostanie zrealizowana. Jesteś pewien?')) return;
+    this.userMicropostService.pay(h)
+     .subscribe(()=>{
+    });
+
+    this.list();
+    this.list();
+  }
  
 }

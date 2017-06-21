@@ -24,5 +24,16 @@ export class UserBoughtListService {
       ;
   }
 
+  delete(id:any): Observable<any>{
+     return this.http.delete(`api/transaction/${id}`);
+   
+  }
+
+  pay(id:any): Observable<any>
+  {
+    return this.http.put(`api/transaction/${id}`,"sss");
+   
+  }
+
  
 }

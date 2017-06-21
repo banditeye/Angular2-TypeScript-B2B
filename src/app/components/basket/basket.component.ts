@@ -70,12 +70,14 @@ export class BasketComponent implements OnInit {
   }
 
   confirmTransaction() {
+    if (!window.confirm('Transakcja zostanie potwierdzona. Kontynuować?')) return;
     this.basketService.confirmTransaction()
       .subscribe(() => { });
     this.basketService.deleteAllBasket()
       .subscribe(() => { });
     this.cd.markForCheck();
-
+  this.ngOnInit();
+    this.ngOnInit();
   }
 
 
