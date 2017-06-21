@@ -5,9 +5,12 @@
 
 
 <ul class="list-group" *ngFor="let product of products">
-    <li class="list-group-item justify-content-between">
-        {{product.product.name}} {{product.pieces}}{{product.transaction.buyer.name}} {{product.transaction.state}}
-        <span class="badge badge-default badge-pill"></span>
+    <li class="list-group-item justify-content-end">
+
+        <span class="mr-auto"> {{product.product.name}}</span>
+        <span class="badge badge-default badge-pill"> {{product.transaction.buyer.name}}</span>
+        <span class="badge badge-default badge-pill"> Ilość: {{product.pieces}}</span>
+        <span class="badge badge-default badge-pill"> Stan: {{product.transaction.state}} </span>
     </li>
 
 </ul>
