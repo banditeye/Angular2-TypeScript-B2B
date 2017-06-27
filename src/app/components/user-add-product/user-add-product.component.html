@@ -5,31 +5,33 @@
 
     <div class="form-group">
         <label for="nameInput">Nazwa</label>
-        <input type="text" class="form-control" id="nameInput" required formControlName="name" placeholder="Nazwa produktu" />
+        <input type="text" class="form-control" [(ngModel)]="product.name" id="nameInput" required formControlName="name" placeholder="Nazwa produktu" />
         <div [hidden]="myForm.controls.name.valid || (myForm.controls.name.pristine && !submitted)">
             Nazwa musi zawierać (minimum 4 znaki).
         </div>
     </div>
     <div class="form-group">
         <label for="priceInput">Cena</label>
-        <input type="text" class="form-control" id="priceInput" required formControlName="price" placeholder="Wprowadź cenę produktu" />
+        <input type="text" class="form-control" id="priceInput" [(ngModel)]="product.price" required formControlName="price" placeholder="Wprowadź cenę produktu" />
     </div>
 
     <div class="form-group">
         <label for="descriptionInput">Opis</label>
-        <textarea class="form-control" id="descriptionInput" required formControlName="description" rows="3" placeholder="Opisz swój produkt"></textarea>
+        <textarea class="form-control" id="descriptionInput"  [(ngModel)]="product.description" required formControlName="description" rows="3" placeholder="Opisz swój produkt"></textarea>
     </div>
     <div class="form-group">
         <label for="piecesInput">Sztuk</label>
-        <input type="text" class="form-control" id="piecesInput" required formControlName="pieces" placeholder="Wpisz liczbę dostępnych sztuk" />
+        <input type="text" class="form-control" id="piecesInput" [(ngModel)]="product.pieces" required formControlName="pieces" placeholder="Wpisz liczbę dostępnych sztuk" />
     </div>
     <div class="form-group">
         <label for="barcodeInput">Kod kreskowy</label>
-        <input type="text" class="form-control" [(ngModel)]="code" id="barcode" required formControlName="barcode" placeholder="Skanuj lub wprowadź kod kreskowy" />
-      <a href="http://92.222.84.152:3001/index.html" target="_blank"> Uruchom kamerę i skanuj kod </a>
-      <button type="button" (click)="openCamera()" class="btn btn-success">Dodaj kod</button>
-      <button type="button" (click)="getProductByBarcode()" class="btn btn-success">Pobierz produkt</button>
-  </div>
+        <input type="text" class="form-control" [(ngModel)]="code" id="barcode" required formControlName="barcode" placeholder="Wprowadź lub skanuj kod QR" />
+        <a href="localhost:3000/index.html" target="_blank"> Uruchom kamerę i skanuj kod </a>
+        
+        <button type="button" (click)="openCamera()" class="btn btn-success">Dodaj kod</button>
+        <button type="button" (click)="getProductByBarcode()" class="btn btn-success">Pobierz produkt</button>
+            
+    </div>
 
     <div class="form-group">
         <label for="exampleSelect1">Kategoria</label>
