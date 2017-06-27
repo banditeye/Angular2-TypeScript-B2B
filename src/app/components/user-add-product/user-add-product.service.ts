@@ -12,5 +12,10 @@ export class UserAddProductService {
   constructor(private http: JsonHttp) {
   }
 
+
+  getProductByBarcode(barcode:number):Observable<any>{
+    return this.http.get(`api/product/barcode/${barcode}`)
+    .map(res=>res.json());
+  }
   
 }
