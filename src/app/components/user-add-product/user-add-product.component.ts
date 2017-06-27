@@ -1,4 +1,3 @@
-
 import {UserAddProductService} from "./user-add-product.service";
 import {HttpErrorHandler} from "../../core/services/http-error-handler";
 
@@ -21,12 +20,13 @@ export class UserAddProductComponent implements OnInit {
   category: any;
   subcategory:any;
   selectedCategory:any;
+  product:Product={};
 
 submitted= false;
   myForm: FormGroup;
   active = true;
 
-  constructor(private productService: ProductService,private categoryService: CategoryService,
+  constructor(private productService: ProductService,private categoryService: CategoryService,private userAddProduct:UserAddProductService,
     private errorHandler: HttpErrorHandler, private fb: FormBuilder) { }
 
   ngOnInit(): void {
@@ -76,9 +76,9 @@ submitted= false;
 
   validationMessages = {
     'name': {
-      'required':      'Name is required.',
-      'minlength':     'Name must be at least 4 characters long.',
-      'maxlength':     'Name cannot be more than 24 characters long.',
+      'required':      'Nazwa jest wymagana.',
+      'minlength':     'Nazwa musi być dłuższa niż 4 znaki.',
+      'maxlength':     'Nazwa nie może być dłuższa niż 24 znaki.',
       'forbiddenName': 'Someone named "Bob" cannot be a hero.'
     },
     'power': {
@@ -87,5 +87,38 @@ submitted= false;
   };
 
 
+ private getCookie(name: string) {
+          let ca: Array<string> = document.cookie.split(';');
+        let caLen: number = ca.length;
+        let cookieName = `${name}=`;
+        let c: string;
+
+        for (let i: number = 0; i < caLen; i += 1) {
+            c = ca[i].replace(/^\s+/g, '');
+            if (c.indexOf(cookieName) == 0) {
+                return c.substring(cookieName.length, c.length);
+            }
+        }
+        return '';
+    }
+
+
+wartosc:any;
+    code:any;
+openCamera(){
+  console.log("otwieram kamere");
+  this.code=parseFloat(this.getCookie("scan"));
+  
+
+   //console.log("Cookies 1" +this.getCookie("scan"));
+     // console.log("Cookies 1" +this.getCookie("scan"));
+      
+}
+
+
+getProductByBarcode(){
+  this.userAddProduct.getProductByBarcode(parseInt(this.getCookie("scan")))
+  .subscribe(data=>this.product=data);
+}
   
 }
